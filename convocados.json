@@ -1,0 +1,92 @@
+{
+	"convocados": [
+		{
+			"nombre": "Emiliano",
+            "apellido": "Martínez",
+			"edad": 30,
+			"posicion": "ARQ",
+			"dorsal": 23,
+			"titular": true
+		},
+        {
+			"nombre": "Nahuel",
+            "apellido": "Molina",
+			"edad": 24,
+			"posicion": "LD",
+			"dorsal": 26,
+			"titular": true
+		},
+        {
+			"nombre": "Cristian",
+            "apellido": "Romero",
+			"edad": 24,
+			"posicion": "DFC",
+			"dorsal": 13,
+			"titular": true
+		},
+        {
+			"nombre": "Nicolás",
+            "apellido": "Otamendi",
+			"edad": 34,
+			"posicion": "DFC",
+			"dorsal": 19,
+			"titular": true
+		},
+        {
+			"nombre": "Marcos",
+            "apellido": "Acuña",
+			"edad": "30",
+			"posicion": "LI",
+			"dorsal": 8,
+			"titular": true
+		},
+        {
+			"nombre": "Ángel",
+            "apellido": "Di María",
+			"edad": 34,
+			"posicion":"ED",
+			"dorsal": 11,
+			"titular": true
+		},
+        {
+			"nombre": "Rodrigo",
+            "apellido": "De Paul",
+			"edad": 28,
+			"posicion": "MC",
+			"dorsal": 7,
+			"titular": true
+		},
+        {
+			"nombre": "Leandro",
+            "apellido": "Paredes",
+			"edad": 28,
+			"posicion": "PIV",
+			"dorsal": 5,
+			"titular": true
+		},
+        {
+			"nombre": "Giovani",
+            "apellido": "Lo Celso",
+			"edad": 26,
+			"posicion": "MCO",
+			"dorsal": 20,
+			"titular": true
+		},
+        {
+			"nombre": "Lionel",
+            "apellido": "Messi",
+			"edad": 35,
+			"posicion": "MP",
+			"dorsal": 10,
+			"titular": true
+		},
+        {
+			"nombre": "Lautaro",
+            "apellido": "Martinez",
+			"edad": 25,
+			"posicion": "DC",
+			"dorsal": 9,
+			"titular": true
+		}
+	]
+}
