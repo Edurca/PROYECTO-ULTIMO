@@ -1,0 +1,298 @@
+.titulo {
+    background-color: #00AFEF;
+    background-image: cover;
+    text-align: center center;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    
+}
+
+
+header h1 {
+    color: white;
+    padding: 15px;
+    margin-left: 0px;
+    font-family: adidas 2014 wc;
+
+}
+
+.logoAfa {
+    object-position: left;
+    position: relative;
+    width:80px;
+    height:100px;
+    margin: 0px 150px 0px 50px;
+}
+
+.fondoTitulo {
+    background: #1C5080;
+    margin-top: 0px;
+    padding: 0px; 
+}
+
+.botonRegistro {
+
+    float:right;
+    position: absolute;
+    margin-top:-36px;
+    margin-right: 400px;
+    width: 50px;
+
+}
+
+
+
+.registroUsuario {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin-left: 30px;
+    width: 155px;
+    
+   
+}
+
+.registroUsuario a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+ 
+  
+    
+
+}
+
+
+.ingreseUsuario {
+    text-align: right;
+    color: white;
+    margin-bottom: 0px;
+    padding-bottom: 12px;
+    padding-top: 12px ;
+    font-size: smaller;
+    font-style: italic;
+   
+}
+
+
+
+.inicioSesion {
+    background-color: #1C5080;
+    align-items: flex-end;
+    color: white;
+    float: right;
+    border-radius: 5px;
+    border-style:groove;
+    border-color: #05a3d3;
+    margin: 5px;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding: 3px;
+    vertical-align: bottom;
+}
+
+.inicioSesion a {
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+    
+    }
+
+#botonListadoConvocados{
+    background-color:#1C5080 ; 
+    border: 1px solid rgb(38, 104, 167);
+    border-radius: 3px 3PX;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: adidas 2014wc;
+    width: 265px;
+    margin-top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    display: inline-block;
+
+}
+
+
+
+.fondoEncabezado {
+    
+    width: 1400px;
+    height: 100px;
+    border: 0px solid rgb(76, 209, 233);
+    padding: 20px;
+    margin: 0 auto;
+    text-align:center;
+  }
+  
+  body {
+    background-image: url("./img/FONDO.jpg");
+    background-size: cover;
+  }
+  
+  .botonRegistro {
+    width: 150px;
+    height: 30px;
+    text-size-adjust: 100px 15px;
+    vertical-align: text-bottom
+  }
+   
+
+
+.fondoPrincipal {
+    background-image: url("img/fondoprincipal.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: cover;
+    background-color: #1C5080;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    
+
+}
+
+
+#btnConvocados:hover{
+    background-color:#05a3d3;
+
+}
+
+#btnConvocados {
+    background-color:#1C5080 ; 
+    border:  none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 265px ;
+    margin-top: 5px;
+    margin-left: 5px;
+       
+    
+  }
+ 
+ 
+
+  #botonTitulares {
+    background-color:#1C5080 ; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: adidas 2014wc;
+    width: 265px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: inline-block;
+
+ }
+
+ #botonTitulares:hover {
+    background-color: #05a3d3;
+ }
+
+
+
+#listaTitulares {
+    font-size: medium;
+    margin-left: 10px;
+    
+}
+
+#listaTitulares li {
+    margin-left: 20px;
+    
+}
+
+.referenciaSuplente{
+    color: red;
+    margin-top: 3px;
+    margin-left: 20px;
+    padding-bottom: 0px;
+    font-style: italic;
+    font-size: small;
+
+}
+
+#botonFechas {
+    background-color:#1C5080 ; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 265px;
+    margin-top: 5px;
+    margin-left: 5px;
+    display: inline-block;
+
+ }
+
+ #botonFechas:hover {
+    background-color: #05a3d3;
+ }
+
+
+
+#listaFechas {
+    font-size:mediums;
+    margin-left: 10px;
+
+
+}
+
+.horaArg {
+    font-size: medium;
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+    font-stretch: extra-condensed;
+    margin-bottom: 2px;
+    background-color: #1C5080;
+
+}
+
+.infoEstadios {
+    font-size: small;
+    text-align: center;
+    margin-bottom: 2px;
+
+}
+
+
+.logoPoli {
+
+    object-position: right;
+    width:70px;
+    height:40px;
+    padding: 2px;
+    margin-bottom: 7px;
+
+}
+
+
+  footer {
+    background-color: #1C5080;
+    text-align: center;
+    font-style: italic;
+    color: whitesmoke;
+
+  }
+
+  
+  
+
+
+
