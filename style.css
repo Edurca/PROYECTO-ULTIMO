@@ -1,45 +1,30 @@
-.titulo {
+body {
+    background-image: url("./img/fondoprincipal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+#tituloHeader {
     background-color: #00AFEF;
-    background-image: cover;
-    text-align: center center;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    
-}
+} 
 
-
-header h1 {
-    color: white;
-    padding: 15px;
-    margin-left: 0px;
-    font-family: adidas 2014 wc;
-
-}
-
-.logoAfa {
-    object-position: left;
-    position: relative;
-    width:80px;
-    height:100px;
-    margin: 0px 150px 0px 50px;
-}
-
-.fondoTitulo {
+#fondoTitulo {
     background: #1C5080;
-    margin-top: 0px;
-    padding: 0px; 
 }
 
-.botonRegistro {
+#btnIngreso {
+    color: rgb(213, 195, 195);
+}
 
+/* .botonRegistro {
     float:right;
     position: absolute;
     margin-top:-36px;
     margin-right: 400px;
     width: 50px;
-
 }
-
 
 
 .registroUsuario {
@@ -57,9 +42,6 @@ header h1 {
     color: white;
     font-size: 13px;
  
-  
-    
-
 }
 
 
@@ -98,23 +80,6 @@ header h1 {
     
     }
 
-#botonListadoConvocados{
-    background-color:#1C5080 ; 
-    border: 1px solid rgb(38, 104, 167);
-    border-radius: 3px 3PX;
-    color: white;
-    padding: 10px 20px 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: adidas 2014wc;
-    width: 265px;
-    margin-top: 5px;
-    margin-left: 5px;
-    cursor: pointer;
-    display: inline-block;
-
-}
 
 
 
@@ -128,10 +93,7 @@ header h1 {
     text-align:center;
   }
   
-  body {
-    background-image: url("./img/FONDO.jpg");
-    background-size: cover;
-  }
+
   
   .botonRegistro {
     width: 150px;
@@ -140,21 +102,6 @@ header h1 {
     vertical-align: text-bottom
   }
    
-
-
-.fondoPrincipal {
-    background-image: url("img/fondoprincipal.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: cover;
-    background-color: #1C5080;
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    
-
-}
 
 
 #btnConvocados:hover{
@@ -295,4 +242,4 @@ header h1 {
   
 
 
-
+  */

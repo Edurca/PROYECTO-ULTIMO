@@ -1,360 +1,299 @@
 <!DOCTYPE html>
+<html lang="es">
 
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<!--Etiqueta para contemplar caracteres especiales en navegadores como explorer y firefox   -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/4bd31e294f.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Lista de convocados</title>
+</head>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- etiqueta para uso resposivo del contenido   -->
+<body>
+    <header>
+       <div class="container-fluid">
+        <div  class="row d-flex justify-content-center align-items-center" id="tituloHeader">
+            <div class="col-2 p-2"> <img src="img/AFA.png" alt="Logo AFA" style="width: 80px;  height: 100px;"></div>
+            <div class="col-9"> <h1 class="text-white">  LISTA DE CONVOCADOS MUNDIAL QATAR 2022 </h1> </div>
+        </div>
 
-		<!-- etiqueta va importar un reset de estilos por default -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end align-items-center" id="fondoTitulo">
+                <div class="mx-2 py-1">
+                    <button class="btn btn-sm btn-outline-dark px-3 mx-1 border-2" id="btnIngreso">Ingresar</button>
+                    <button class="btn btn-sm btn-dark px-3 border-1">Registro</button>
+                </div>
+            </div>
+        </div>
 
-		<link rel="stylesheet" href="./style.css" />
-		<!-- etiqueta que archivo externo css para importar los estilos -->
+       </div>
+    </header>
 
-		<!-- etiquetas para incorporar estilos desde bootstrap -->
-
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-			rel="stylesheet" />
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-		<title>PROYECTO LISTA DE CONVOCADOS MUNDIAL 2022</title>
-		<!--Titulo pestaña -->
-	</head>
-
-	<body>
-	
-		<header>
-
-			<div>
-				  
-			  <h1 class = "titulo" class="container-fluid"> <img src="img/AFA.png" alt="Logo AFA" class="logoAfa">  LISTA DE CONVOCADOS MUNDIAL QATAR 2022 </h1>
-				  
-			</div>
-				  
-			  <div>
-				
-				<div class="fondoTitulo">
-				   
-				  <button class="inicioSesion" target="_blank" >
-						 
-				
-					<a href="Validacion.html" >  INICIAR SESIÓN </a>
-			          
-			 
-				  </button>
-	  
-				  <P class="ingreseUsuario"> BIENVENIDO POR FAVOR INICIE SESIÓN</P>
-
-				  <span class="botonRegistro">
-
-					<button class="registroUsuario" target="_blank" >
-						
-					  <a href="Formularioregistro.html" > REGISTRO DE USUARIO </a>
-		  
-					</button>
-		  
-				  </span>
-	  
-				</div>
-	  
-			  </div>
+    <main>
+        <div class="container-fluid min-vh-100">
+        <div class="row" >
+            <div class="container text-center mt-1" id="botonera">
+                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnConvocados">
+                LISTA DE CONVOCADOS
+                </button>
+                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnTitulares">
+                    TITULARES
+                </button>
+                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnPartidos">
+                      PARTIDOS
+                </button>
+            </div>	
+        </div>
 
 
-		</header>
+        <div data-state="view" class="container" id="convocados">
+                <div class="row text-center">
+                    <article class="col-sm-12 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary fw-bold fs-3">Arqueros</h5>
+                                <ul class="list-group">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Emiliano Martinez</span>
+                                        <span class="badge bg-secondary rounded-pill">ARQ</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Franco Armani</span>
+                                        <span class="badge bg-secondary rounded-pill">ARQ</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Juan Musso</span>
+                                        <span class="badge bg-secondary rounded-pill">ARQ</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Geronimo Rulli</span>
+                                        <span class="badge bg-secondary rounded-pill">ARQ</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
 
-		<main class="fondoPrincipal">
+                    <article class="col-sm-12 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary fw-bold fs-3">Defensores</h5>
+                                <ul class="list-group">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Gonzalo Montiel</span>
+                                        <span class="badge bg-primary rounded-pill">LD</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Nahuel Molina</span>
+                                        <span class="badge bg-primary rounded-pill">LD</span>
+                                    </li>
+                                    
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">German Pezella</span>
+                                        <span class="badge bg-primary rounded-pill">DFC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Nehuen Perez</span>
+                                        <span class="badge bg-primary rounded-pill">DFC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Cristian Romero</span>
+                                        <span class="badge bg-primary rounded-pill">DFC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Nicolas Otamendi</span>
+                                        <span class="badge bg-primary rounded-pill">DFC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Lisandro Martinez</span>
+                                        <span class="badge bg-primary rounded-pill">DFC</span>
+                                    </li>
+                                    
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Nicolas Tagliafico</span>
+                                        <span class="badge bg-primary rounded-pill">LI</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Marcos  Acuña</span>
+                                        <span class="badge bg-primary rounded-pill">LI</span>
+                                    </li>
+                            </div>
+                        </div>
+                    </article>
 
-			<div class="container-fluid">
-				<div class="botonera">
-					<button type="button" class="btn btn-primary mt-3" id="btnConvocados">
-					LISTADO DE CONVOCADOS
-					</button>
-				</div>
+                    <article class="col-sm-12 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-success fw-bold fs-3">
+                                    Mediocampistas
+                                </h5>
+                                <ul class="list-group">
+                                    <li
+                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="lead">Guido Rodriguez</span>
+                                    <span class="badge bg-success rounded-pill">PIV</span>
+                                </li>
 
-				<div data-conv="hide" class="container d-none" id="convocados">
-					<div class="row text-center">
-						<!-- Esto despues tiene que venir a traves del back -->
-						<article class="col-sm-6 col-md-3 mt-3">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title text-secondary fw-bold fs-3">Arqueros</h5>
-									<ul class="list-group">
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Emiliano Martinez</span>
-											<span class="badge bg-secondary rounded-pill">ARQ</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Franco Armani</span>
-											<span class="badge bg-secondary rounded-pill">ARQ</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Juan Musso</span>
-											<span class="badge bg-secondary rounded-pill">ARQ</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Geronimo Rulli</span>
-											<span class="badge bg-secondary rounded-pill">ARQ</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</article>
+                                <li
+                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="lead">Leandro Paredes</span>
+                                    <span class="badge bg-success rounded-pill">PIV</span>
+                                </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Rodrigo De Paul</span>
+                                        <span class="badge bg-success rounded-pill">MC</span>
+                                    </li>
+                                    
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Exequiel Palacios</span>
+                                        <span class="badge bg-success rounded-pill">MC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Enzo Fernandez</span>
+                                        <span class="badge bg-success rounded-pill">MC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Giovani Lo Celso</span>
+                                        <span class="badge bg-success rounded-pill">MC</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Alexis Mac Allister</span>
+                                        <span class="badge bg-success rounded-pill">MCO</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Thiago Almada</span>
+                                        <span class="badge bg-success rounded-pill">MCO</span>
+                                    </li>
+                                                                
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Alejandro Gomez</span>
+                                        <span class="badge bg-success rounded-pill">MCO</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
 
-						<article class="col-sm-6 col-md-3 mt-3">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title text-primary fw-bold fs-3">Defensores</h5>
-									<ul class="list-group">
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Gonzalo Montiel</span>
-											<span class="badge bg-primary rounded-pill">LD</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Nahuel Molina</span>
-											<span class="badge bg-primary rounded-pill">LD</span>
-										</li>
-										
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">German Pezella</span>
-											<span class="badge bg-primary rounded-pill">DFC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Nehuen Perez</span>
-											<span class="badge bg-primary rounded-pill">DFC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Cristian Romero</span>
-											<span class="badge bg-primary rounded-pill">DFC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Nicolas Otamendi</span>
-											<span class="badge bg-primary rounded-pill">DFC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Lisandro Martinez</span>
-											<span class="badge bg-primary rounded-pill">DFC</span>
-										</li>
-										
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Nicolas Tagliafico</span>
-											<span class="badge bg-primary rounded-pill">LI</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Marcos  Acuña</span>
-											<span class="badge bg-primary rounded-pill">LI</span>
-										</li>
-								</div>
-							</div>
-						</article>
+                    <article class="col-sm-12 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger fw-bold fs-3">
+                                    Delanteros
+                                </h5>
+                                <ul class="list-group">
+                                    <li
+                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="lead">Paulo Dybala</span>
+                                    <span class="badge bg-danger rounded-pill">MP</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="lead">Lionel Messi</span>
+                                    <span class="badge bg-danger rounded-pill">MP</span>
+                                    </li>
+                                <li
+                                class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="lead">Joaquin Correa</span>
+                                <span class="badge bg-danger rounded-pill">MP</span>
+                            </li>
+                            
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="lead">Nicolas Gonzalez</span>
+                                <span class="badge bg-danger rounded-pill">EI</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="lead">Angel Di Maria</span>
+                            <span class="badge bg-danger rounded-pill">ED</span>
+                    </li>
 
-						<article class="col-sm-6 col-md-3 mt-3">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title text-success fw-bold fs-3">
-										Mediocampistas
-									</h5>
-									<ul class="list-group">
-										<li
-										class="list-group-item d-flex justify-content-between align-items-center">
-										<span class="lead">Guido Rodriguez</span>
-										<span class="badge bg-success rounded-pill">PIV</span>
-									</li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="lead">Angel Correa</span>
+                                <span class="badge bg-danger rounded-pill">ED</span>
+                            </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Lautaro Martinez</span>
+                                        <span class="badge bg-danger rounded-pill">DC</span>
+                                    </li>
+                                
+                                    
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="lead">Julian Alvarez</span>
+                                        <span class="badge bg-danger rounded-pill">DC</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                
+        </div>
+       </div>  
+       
+       <div  class="container" >
+            <div class="row d-none mt-2" id="titulares" data-state="hide">
+            </div>
+       </div>
 
-									<li
-										class="list-group-item d-flex justify-content-between align-items-center">
-										<span class="lead">Leandro Paredes</span>
-										<span class="badge bg-success rounded-pill">PIV</span>
-									</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Rodrigo De Paul</span>
-											<span class="badge bg-success rounded-pill">MC</span>
-										</li>
-										
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Exequiel Palacios</span>
-											<span class="badge bg-success rounded-pill">MC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Enzo Fernandez</span>
-											<span class="badge bg-success rounded-pill">MC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Giovani Lo Celso</span>
-											<span class="badge bg-success rounded-pill">MC</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Alexis Mac Allister</span>
-											<span class="badge bg-success rounded-pill">MCO</span>
-										</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Thiago Almada</span>
-											<span class="badge bg-success rounded-pill">MCO</span>
-										</li>
-																	
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Alejandro Gomez</span>
-											<span class="badge bg-success rounded-pill">MCO</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</article>
+       <div  class="container" >
+            <div class="row d-none mt-2" id="partidos" data-state="hide">
+            </div>
+        </div>
 
-						<article class="col-sm-6 col-md-3 mt-3">
-							<div class="card">
-								<div class="card-body">
-									<h5 class="card-title text-danger fw-bold fs-3">
-										Delanteros
-									</h5>
-									<ul class="list-group">
-										<li
-										class="list-group-item d-flex justify-content-between align-items-center">
-										<span class="lead">Paulo Dybala</span>
-										<span class="badge bg-danger rounded-pill">MP</span>
-									</li>
-									<li class="list-group-item d-flex justify-content-between align-items-center">
-										<span class="lead">Lionel Messi</span>
-										<span class="badge bg-danger rounded-pill">MP</span>
-										</li>
-									<li
-									class="list-group-item d-flex justify-content-between align-items-center">
-									<span class="lead">Joaquin Correa</span>
-									<span class="badge bg-danger rounded-pill">MP</span>
-								</li>
-								
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-									<span class="lead">Nicolas Gonzalez</span>
-									<span class="badge bg-danger rounded-pill">EI</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between align-items-center">
-								<span class="lead">Angel Di Maria</span>
-								<span class="badge bg-danger rounded-pill">ED</span>
-						</li>
-
-								<li
-									class="list-group-item d-flex justify-content-between align-items-center">
-									<span class="lead">Angel Correa</span>
-									<span class="badge bg-danger rounded-pill">ED</span>
-								</li>
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Lautaro Martinez</span>
-											<span class="badge bg-danger rounded-pill">DC</span>
-										</li>
-									
-										
-										<li
-											class="list-group-item d-flex justify-content-between align-items-center">
-											<span class="lead">Julian Alvarez</span>
-											<span class="badge bg-danger rounded-pill">DC</span>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</article>
-					</div>
-				</div>
-			</div>
-
-			<button type="button"  id = "botonTitulares" class="btn btn-secondary toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				TITULARES
-			  </button>
-	  
-			  <ul class="dropdown-menu" id = "listaTitulares">
-				
-				  <li><a class="dropdown-item" href="#"> </a> Emiliano Martínez  </li>
-				  <li><a class="dropdown-item" href="#"> </a> Nahuel Molina      </li>
-				  <li><a class="dropdown-item" href="#"> </a> Cristian Romero     </li>
-				  <li><a class="dropdown-item" href="#"> </a> Nicolás Otamendi    </li>
-				  <li><a class="dropdown-item" href="#"> </a> Nicolás Tagliafico    </li>
-				  <li><a class="dropdown-item" href="#"> </a> Rodrigo De Paul   </li>
-				  <li><a class="dropdown-item" href="#"> </a> Guido Rodríguez    </li>
-				  <li><a class="dropdown-item" href="#"> </a> Giovani Lo Celso   </li>
-				  <li><a class="dropdown-item" href="#"> </a> Lionel Messi   </li>
-				  <li><a class="dropdown-item" href="#"> </a> Lautaro Martínez    </li>
-				  <li><a class="dropdown-item" href="#"> </a> Ángel Di María </li>
-											
-				<br>
-				<p class="referenciaSuplente">  Referencia (suplente) </p>
-		   
-			   </ul>
-			
-			</div>
-			</div>
-			
-		   <div>
-			
-			<div class="btn-group-vertical" role="group" aria-label="Vertical button group" >
-			  <button type="button" id="botonFechas" class="btn btn-secondary toggle" data-bs-toggle="dropdown" aria-expanded="false">
-				FECHAS Y LUGARES
-			  </button>
-	  
-			  <ul class="dropdown-menu" id = "listaFechas">
-	  
-				<li><a class="dropdown-item" href="EstadioLusail.html"> <strong> Martes 22 de noviembre
-				  7:00 Hs. </strong>  Argentina-Arabia Saudita <strong>(Grupo C)</strong> (Estadio Lusail)</a></li>
-	  
-				<li><a class="dropdown-item" href="EstadioLusail.html"> <strong> Sábado 26 de noviembre
-				  16:00 Hs. </strong> Argentina-México <strong>(Grupo C)</strong> (Estadio Lusail))</a></li>
-	  
-				<li><a class="dropdown-item" href="Estadio974.html"> <strong>Miércoles 30 de noviembre
-				  16:00 Hs. </strong> Polonia-Argentina <strong>(Grupo C)</strong> (Estadio 974)</a></li>
-	  
-				<br>
-	  
-				<p class = "horaArg"> HORA ARGENTINA </p>
-				<p class = "infoEstadios"> ( Para ver más información haga click sobre el estadio) </p>
-					  
-			  </ul>
-	  
-			</div>
-	  
-			
-			
-			</div>
-	  
-
-
-
-
-		</main>
-	</body>
-	<script src="./script.js"></script>
-
-
+       <template id="template-titulares">
+            <div class="col-6 col-lg-4 my-2">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-center">
+                        <h6 class="text-center mt-1 mx-2">Titulares</h6>
+                        <button class="btn btn-sm btn-danger border-0" id="rmvJugador"><i class="fa-solid fa-xmark pe-none"></i></button>
+                        
+                        <!-- <p></p>
+                        <span class="badge badge-primary">MD</span>
+                        <img src="" alt=""> -->
+                    </div>
+                </div>
+            </div>
+       </template>
+       
+    </div>            
+    </main> 
 
     <footer>
-
-    
-		<img src="img/logo poli.png" alt="Logo politenico" class="logoPoli">
-		<br>
-		<p>  (-Version Beta-)   </p> 
-	   
-		</footer>
-
+       <div class="container-fluid">
+        <div class="row mt-4">
+            <div class=" col-2 col-lg-1">
+                <img src="img/logo-poli.png" alt="Logo politenico" class="img-fluid">
+            </div>
+            <div class="col-md-4 col-lg-10">
+                <p class="small text-white text-center align-text-bottom mt-3">Desarollado por Grupo 5 // Copyright © 2022 Todos los derechos reservados
+                </p> 
+            </div>
+        </div>
+       </div>
+    </footer>
+</body>
 </html>
-
-
