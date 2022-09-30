@@ -17,6 +17,20 @@ body {
 #btnIngreso {
     color: rgb(213, 195, 195);
 }
+.columnas {
+    column-count: 3 !important;
+    padding-left: 0px;
+    margin: 0px
+}
+
+
+@media (max-width: 900px) {
+    .columnas {
+        column-count: 1 !important;
+        padding-left: 0px;
+        margin: 0px
+    }
+  }
 
 /* .botonRegistro {
     float:right;

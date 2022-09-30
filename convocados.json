@@ -5,87 +5,8 @@
             "apellido": "Martínez",
 			"edad": 30,
 			"posicion": ["ARQ"],
+			"color": "bg-secondary",
 			"dorsal": 23,
-			"titular": true
-		},
-        {
-			"nombre": "Nahuel",
-            "apellido": "Molina",
-			"edad": 24,
-			"posicion": ["LD"],
-			"dorsal": 26,
-			"titular": true
-		},
-        {
-			"nombre": "Cristian",
-            "apellido": "Romero",
-			"edad": 24,
-			"posicion": ["DFC"],
-			"dorsal": 13,
-			"titular": true
-		},
-        {
-			"nombre": "Nicolás",
-            "apellido": "Otamendi",
-			"edad": 34,
-			"posicion": ["DFC"],
-			"dorsal": 19,
-			"titular": true
-		},
-        {
-			"nombre": "Marcos",
-            "apellido": "Acuña",
-			"edad": 30,
-			"posicion": ["LI"],
-			"dorsal": 8,
-			"titular": true
-		},
-        {
-			"nombre": "Ángel",
-            "apellido": "Di María",
-			"edad": 34,
-			"posicion":["ED"],
-			"dorsal": 11,
-			"titular": true
-		},
-        {
-			"nombre": "Rodrigo",
-            "apellido": "De Paul",
-			"edad": 28,
-			"posicion": ["MC"],
-			"dorsal": 7,
-			"titular": true
-		},
-        {
-			"nombre": "Leandro",
-            "apellido": "Paredes",
-			"edad": 28,
-			"posicion": ["PIV"],
-			"dorsal": 5,
-			"titular": true
-		},
-        {
-			"nombre": "Giovani",
-            "apellido": "Lo Celso",
-			"edad": 26,
-			"posicion": ["MCO"],
-			"dorsal": 20,
-			"titular": true
-		},
-        {
-			"nombre": "Lionel",
-            "apellido": "Messi",
-			"edad": 35,
-			"posicion": ["MP"],
-			"dorsal": 10,
-			"titular": true
-		},
-        {
-			"nombre": "Lautaro",
-            "apellido": "Martinez",
-			"edad": 25,
-			"posicion": ["DC"],
-			"dorsal": 9,
 			"titular": true
 		},
 		{
@@ -93,6 +14,7 @@
             "apellido": "Armani",
 			"edad": 35,
 			"posicion": ["ARQ"],
+			"color": "bg-secondary",
 			"dorsal": 1,
 			"titular": false
 		},
@@ -101,30 +23,34 @@
             "apellido": "Rulli",
 			"edad": 30,
 			"posicion": ["ARQ"],
+			"color": "bg-secondary",
 			"dorsal": 13,
 			"titular": false
 		},
-		{
-			"nombre": "Gonzalo",
-            "apellido": "Montiel",
-			"edad": 25,
-			"posicion": ["LD"],
-			"dorsal": 4,
-			"titular": false
+        {
+			"nombre": "Cristian",
+            "apellido": "Romero",
+			"edad": 24,
+			"posicion": ["DFC"],
+			"color": "bg-primary",
+			"dorsal": 13,
+			"titular": true
 		},
-		{
-			"nombre": "Nehuen",
-            "apellido": "Perez",
-			"edad": 22,
-			"posicion": ["LD"],
-			"dorsal": 2,
-			"titular": false
+        {
+			"nombre": "Nicolás",
+            "apellido": "Otamendi",
+			"edad": 34,
+			"posicion": ["DFC"],
+			"color": "bg-primary",
+			"dorsal": 19,
+			"titular": true
 		},
 		{
 			"nombre": "German",
             "apellido": "Pezzella",
 			"edad": 31,
 			"posicion": ["DFC"],
+			"color": "bg-primary",
 			"dorsal": 6,
 			"titular": false
 		},
@@ -133,22 +59,79 @@
             "apellido": "Martinez",
 			"edad": 25,
 			"posicion": ["DFC"],
+			"color": "bg-primary",
 			"dorsal": 25,
 			"titular": false
+		},
+		{
+			"nombre": "Nahuel",
+            "apellido": "Molina",
+			"edad": 24,
+			"posicion": ["LD"],
+			"color": "bg-primary",
+			"dorsal": 26,
+			"titular": true
+		},
+		{
+			"nombre": "Gonzalo",
+            "apellido": "Montiel",
+			"edad": 25,
+			"posicion": ["LD"],
+			"color": "bg-primary",
+			"dorsal": 4,
+			"titular": false
+		},
+		{
+			"nombre": "Nehuen",
+            "apellido": "Perez",
+			"edad": 22,
+			"posicion": ["LD"],
+			"color": "bg-primary",
+			"dorsal": 2,
+			"titular": false
+		},
+        {
+			"nombre": "Marcos",
+            "apellido": "Acuña",
+			"edad": 30,
+			"posicion": ["LI"],
+			"color": "bg-primary",
+			"dorsal": 8,
+			"titular": true
 		},
 		{
 			"nombre": "Nicolas",
             "apellido": "Tagliafico",
 			"edad": 30,
 			"posicion": ["LI"],
+			"color": "bg-primary",
 			"dorsal": 3,
 			"titular": false
+		},
+		{
+			"nombre": "Leandro",
+            "apellido": "Paredes",
+			"edad": 28,
+			"posicion": ["PIV"],
+			"color": "bg-success",
+			"dorsal": 5,
+			"titular": true
+		},
+        {
+			"nombre": "Rodrigo",
+            "apellido": "De Paul",
+			"edad": 28,
+			"posicion": ["MC"],
+			"color": "bg-success",
+			"dorsal": 7,
+			"titular": true
 		},
 		{
 			"nombre": "Guido",
             "apellido": "Rodriguez",
 			"edad": 28,
 			"posicion": ["MC"],
+			"color": "bg-success",
 			"dorsal": 18,
 			"titular": false
 		},
@@ -157,6 +140,7 @@
             "apellido": "Fernandez",
 			"edad": 21,
 			"posicion": ["MC"],
+			"color": "bg-success",
 			"dorsal": 14,
 			"titular": false
 		},
@@ -165,31 +149,71 @@
             "apellido": "Gomez",
 			"edad": 24,
 			"posicion": ["MCO"],
+			"color": "bg-success",
 			"dorsal": 9,
 			"titular": false
 		},
-		{
-			"nombre": "Julian",
-            "apellido": "Alvarez",
-			"edad": 22,
-			"posicion": ["DC"],
-			"dorsal": 27,
-			"titular": false
+        {
+			"nombre": "Giovani",
+            "apellido": "Lo Celso",
+			"edad": 26,
+			"posicion": ["MCO"],
+			"color": "bg-success",
+			"dorsal": 20,
+			"titular": true
 		},
-		{
-			"nombre": "Nicolas",
-            "apellido": "Gonzalez",
-			"edad": 24,
-			"posicion": ["ED"],
-			"dorsal": 15,
-			"titular": false
+        {
+			"nombre": "Lionel",
+            "apellido": "Messi",
+			"edad": 35,
+			"posicion": ["MP"],
+			"color": "bg-danger",
+			"dorsal": 10,
+			"titular": true
 		},
 		{
 			"nombre": "Joquin",
 			"apellido": "Correa",
 			"edad": 28,
 			"posicion": ["MP"],
+			"color": "bg-danger",
 			"dorsal": 16,
+			"titular": false
+		},
+        {
+			"nombre": "Lautaro",
+            "apellido": "Martinez",
+			"edad": 25,
+			"posicion": ["DC"],
+			"color": "bg-danger",
+			"dorsal": 9,
+			"titular": true
+		},
+		{
+			"nombre": "Julian",
+            "apellido": "Alvarez",
+			"edad": 22,
+			"posicion": ["DC"],
+			"color": "bg-danger",
+			"dorsal": 27,
+			"titular": false
+		},
+		{
+			"nombre": "Ángel",
+            "apellido": "Di María",
+			"edad": 34,
+			"posicion":["ED"],
+			"color": "bg-danger",
+			"dorsal": 11,
+			"titular": true
+		},
+		{
+			"nombre": "Nicolas",
+            "apellido": "Gonzalez",
+			"edad": 24,
+			"posicion": ["ED"],
+			"color": "bg-danger",
+			"dorsal": 15,
 			"titular": false
 		}
 	]

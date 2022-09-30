@@ -1,7 +1,9 @@
 const botonera = document.querySelector('#botonera');
 const convocados = document.getElementById('convocados');
-const titulares = document.getElementById('titulares');
-const partidos = document.getElementById('partidos');
+const convocadosDiv = document.getElementById('convocadosDiv');
+const titularesDiv = document.getElementById('titulares');
+const partidosDiv = document.getElementById('partidos');
+const templateConvocados = document.getElementById('template-convocados').content
 const templateTitulares = document.getElementById('template-titulares').content;
 const fragment = document.createDocumentFragment();
 
@@ -23,25 +25,18 @@ const fetchData = async () => {
 
 //funcion para imprimir datos de convocados
 const pintarConvocados = data => {
-    cardArqueros(data)
-   
+	data.convocados.map(jugador => {
+		templateConvocados.querySelector('.lead').textContent = `${jugador.nombre} ${jugador.apellido}`;
+		templateConvocados.querySelector('.badge').textContent = `${jugador.posicion[0]}`
+		templateConvocados.querySelector('.badge').className = `badge ${jugador.color} rounded-pill`
+		
+		const clone = templateConvocados.cloneNode(true);
+		fragment.appendChild(clone);
+	})
+	convocados.appendChild(fragment)
 };
 
-const cardArqueros = (data) => {
-    const arq = []
-    data.convocados.map(jugador => {
-		jugador.posicion.filter(posicion => {
-            if (posicion === 'ARQ') {
-                arq.push(jugador)
-			}
-        });
-	});
-    
-    arq.forEach(arquero => {
-        // hacer el template de cardArqueros y sustituir contenido
-    })
-}
-//funcion para imprimir datos de titulares
+//funcion para pintar jugadores titulares
 const pintarTitulares = data => {
 	data.convocados.map(jugador => {
 		if (jugador.titular === true) {
@@ -54,11 +49,11 @@ const pintarTitulares = data => {
 			fragment.appendChild(clone);
 		}
 	});
-	titulares.appendChild(fragment);
+	titularesDiv.appendChild(fragment);
 };
 
-// funcion que remueve jugador titular del equipo
-titulares.addEventListener('click', e => {
+// funcion que remueve jugador titular del equipo (en desarollo)
+titularesDiv.addEventListener('click', e => {
 	removerTitular(e);
 });
 
@@ -73,43 +68,41 @@ const removerTitular = e => {
 //funcion para desplegar contenidos del menu
 botonera.addEventListener('click', e => {
 	if (e.target.id === 'btnConvocados') {
-		titulares.classList.add('d-none');
-		titulares.dataset.state = 'hide';
+		titularesDiv.classList.add('d-none');
+		titularesDiv.dataset.state = 'hide';
 		partidos.classList.add('d-none');
 		partidos.dataset.state = 'hide';
-		if (convocados.dataset.state === 'view') {
+		if (convocadosDiv.dataset.state === 'view') {
 			//comprueba si ya se abrió la pestaña, si es true agrega d-none y cambia el valor de data a hide
-			convocados.classList.add('d-none');
-			convocados.dataset.state = 'hide';
-			titulares.classList.add('d-none');
-			titulares.dataset.state = 'hide';
+			convocadosDiv.classList.add('d-none');
+			convocadosDiv.dataset.state = 'hide';
 			return;
 		}
 		// si no quita la clase d-none y muestra el menu
-		convocados.classList.remove('d-none');
-		convocados.dataset.state = 'view';
+		convocadosDiv.classList.remove('d-none');
+		convocadosDiv.dataset.state = 'view';
 	}
 
 	if (e.target.id === 'btnTitulares') {
-		convocados.classList.add('d-none');
-		convocados.dataset.state = 'hide';
+		convocadosDiv.classList.add('d-none');
+		convocadosDiv.dataset.state = 'hide';
 		partidos.classList.add('d-none');
 		partidos.dataset.state = 'hide';
 
-		if (titulares.dataset.state === 'view') {
-			titulares.classList.add('d-none');
-			titulares.dataset.state = 'hide';
+		if (titularesDiv.dataset.state === 'view') {
+			titularesDiv.classList.add('d-none');
+			titularesDiv.dataset.state = 'hide';
 			return;
 		}
-		titulares.classList.remove('d-none');
-		titulares.dataset.state = 'view';
+		titularesDiv.classList.remove('d-none');
+		titularesDiv.dataset.state = 'view';
 	}
 
 	if (e.target.id === 'btnPartidos') {
-		convocados.classList.add('d-none');
-		convocados.dataset.state = 'hide';
-		titulares.classList.add('d-none');
-		titulares.dataset.state = 'hide';
+		convocadosDiv.classList.add('d-none');
+		convocadosDiv.dataset.state = 'hide';
+		titularesDiv.classList.add('d-none');
+		titularesDiv.dataset.state = 'hide';
 
 		if (partidos.dataset.state === 'view') {
 			partidos.classList.add('d-none');
@@ -122,3 +115,56 @@ botonera.addEventListener('click', e => {
 
 	e.stopPropagation();
 });
+
+
+/* const filtrarConvocados = data => {
+	const arq = [];
+	const def = [];
+	const vol = [];
+	const del = [];
+
+	data.convocados.map(jugador => {
+		jugador.posicion.filter(posicion => {
+			if (posicion === 'ARQ') {
+				arq.push(jugador);
+			}
+			if (posicion === 'DFC' || posicion === 'LD' || posicion === 'LI') {
+				def.push(jugador);
+			}
+			if (
+				posicion === 'MC' ||
+				posicion === 'MCO' ||
+				posicion === 'PIV' ||
+				posicion === 'VOL'
+			) {
+				vol.push(jugador);
+			}
+			if (
+				posicion === 'DC' ||
+				posicion === 'ED' ||
+				posicion === 'EI' ||
+				posicion === 'MP'
+			) {
+				del.push(jugador);
+			}
+		});
+
+	});
+	
+	pintarConvocados( arq ,  def ,  vol , del );
+
+};
+
+const pintarConvocados = (arq, def, vol, del) => {
+	console.log(arq, def, vol, del)
+	
+	 /* arq.forEach(arquero => {
+		// hacer el template de cardArqueros y sustituir contenido
+		console.log(arquero);
+		templateArq.querySelector('.lead').textContent = `${arquero.nombre} ${arquero.apellido}`;
+		templateArq.querySelector('.badge').textContent = `${arquero.posicion[0]}`;
+		const clone = templateArq.cloneNode(true);
+		fragment.appendChild(clone);
+	});
+	cardArq.appendChild(fragment);  
+} */
