@@ -3,7 +3,9 @@ const convocados = document.getElementById('convocados');
 const convocadosDiv = document.getElementById('convocadosDiv');
 const titularesDiv = document.getElementById('titulares');
 const partidosDiv = document.getElementById('partidos');
-const templateConvocados = document.getElementById('template-convocados').content
+const templateConvocados = document.getElementById(
+	'template-convocados'
+).content;
 const templateTitulares = document.getElementById('template-titulares').content;
 const fragment = document.createDocumentFragment();
 
@@ -26,15 +28,23 @@ const fetchData = async () => {
 //funcion para imprimir datos de convocados
 const pintarConvocados = data => {
 	data.convocados.map(jugador => {
-		templateConvocados.querySelector('.fw-bolder').textContent = `#${jugador.dorsal}`
-		templateConvocados.querySelector('.lead').textContent = `${jugador.nombre} ${jugador.apellido}`;
-		templateConvocados.querySelector('.badge').textContent = `${jugador.posicion[0]}`
-		templateConvocados.querySelector('.badge').className = `badge ${jugador.color} rounded-pill`
-		
+		templateConvocados.querySelector(
+			'.fw-bolder'
+		).textContent = `#${jugador.dorsal}`;
+		templateConvocados.querySelector(
+			'.lead'
+		).textContent = `${jugador.nombre} ${jugador.apellido}`;
+		templateConvocados.querySelector(
+			'.badge'
+		).textContent = `${jugador.posicion[0]}`;
+		templateConvocados.querySelector(
+			'.badge'
+		).className = `badge ${jugador.color} rounded-pill`;
+
 		const clone = templateConvocados.cloneNode(true);
 		fragment.appendChild(clone);
-	})
-	convocados.appendChild(fragment)
+	});
+	convocados.appendChild(fragment);
 };
 
 //funcion para pintar jugadores titulares
@@ -61,7 +71,7 @@ titularesDiv.addEventListener('click', e => {
 const removerTitular = e => {
 	if (e.target.classList.contains('btn-danger')) {
 		//pregunta si el elemento al que clickeamos contiene la clase
-		console.log('Remover'); // FALTA IMPLEMENTAR
+		console.log(`Remover ${e.target.dataset.id}`); // FALTA IMPLEMENTAR
 	}
 	e.stopPropagation();
 };
@@ -117,7 +127,6 @@ botonera.addEventListener('click', e => {
 	e.stopPropagation();
 });
 
-
 /* const filtrarConvocados = data => {
 	const arq = [];
 	const def = [];
@@ -152,20 +161,6 @@ botonera.addEventListener('click', e => {
 
 	});
 	
-	pintarConvocados( arq ,  def ,  vol , del );
 
 };
-
-const pintarConvocados = (arq, def, vol, del) => {
-	console.log(arq, def, vol, del)
-	
-	 /* arq.forEach(arquero => {
-		// hacer el template de cardArqueros y sustituir contenido
-		console.log(arquero);
-		templateArq.querySelector('.lead').textContent = `${arquero.nombre} ${arquero.apellido}`;
-		templateArq.querySelector('.badge').textContent = `${arquero.posicion[0]}`;
-		const clone = templateArq.cloneNode(true);
-		fragment.appendChild(clone);
-	});
-	cardArq.appendChild(fragment);  
 } */
