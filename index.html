@@ -1,116 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./script.js" defer></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet" />
+		<script
+			src="https://kit.fontawesome.com/4bd31e294f.js"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+		<title>Lista de convocados</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/4bd31e294f.js" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Lista de convocados</title>
-</head>
+	<body>
+		<header>
+			<div class="container-fluid">
+				<div
+					class="row d-flex justify-content-center align-items-center"
+					id="tituloHeader">
+					<div class="col-2 p-2">
+						<img
+							src="img/AFA.png"
+							alt="Logo AFA"
+							style="width: 80px; height: 100px" />
+					</div>
+					<div class="col-9">
+						<h1 class="text-white">LISTA DE CONVOCADOS MUNDIAL QATAR 2022</h1>
+					</div>
+				</div>
 
-<body>
-    <header>
-       <div class="container-fluid">
-        <div  class="row d-flex justify-content-center align-items-center" id="tituloHeader">
-            <div class="col-2 p-2"> <img src="img/AFA.png" alt="Logo AFA" style="width: 80px;  height: 100px;"></div>
-            <div class="col-9"> <h1 class="text-white">  LISTA DE CONVOCADOS MUNDIAL QATAR 2022 </h1> </div>
-        </div>
+				<div class="row">
+					<div
+						class="col-12 d-flex justify-content-end align-items-center"
+						id="fondoTitulo">
+						<div class="mx-2 py-1">
+							<button
+								class="btn btn-sm btn-outline-dark px-3 mx-1 border-2"
+								id="btnIngreso">
+								Ingresar
+							</button>
+							<button class="btn btn-sm btn-dark px-3 border-1">
+								Registro
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-        <div class="row">
-            <div class="col-12 d-flex justify-content-end align-items-center" id="fondoTitulo">
-                <div class="mx-2 py-1">
-                    <button class="btn btn-sm btn-outline-dark px-3 mx-1 border-2" id="btnIngreso">Ingresar</button>
-                    <button class="btn btn-sm btn-dark px-3 border-1">Registro</button>
-                </div>
-            </div>
-        </div>
+		<main>
+			<div class="container-fluid min-vh-100">
+				<div class="row">
+					<div class="container text-center mt-1" id="botonera">
+						<button
+							type="button"
+							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
+							id="btnConvocados">
+							LISTA DE CONVOCADOS
+						</button>
+						<button
+							type="button"
+							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
+							id="btnTitulares">
+							TITULARES
+						</button>
+						<button
+							type="button"
+							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
+							id="btnPartidos">
+							PARTIDOS
+						</button>
+					</div>
+				</div>
 
-       </div>
-    </header>
+				<div class="container text-center" data-state="view" id="convocadosDiv">
+					<div class="row">
+						<article class="col-12 mt-5">
+							<div class="card">
+								<div class="card-body p-3">
+									<ul class="columnas" id="convocados"></ul>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
 
-    <main>
-        <div class="container-fluid min-vh-100">
-        <div class="row" >
-            <div class="container text-center mt-1" id="botonera">
-                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnConvocados">
-                LISTA DE CONVOCADOS
-                </button>
-                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnTitulares">
-                    TITULARES
-                </button>
-                <button type="button" class="col-12 col-lg-2 btn btn-primary my-1 mx-2" id="btnPartidos">
-                      PARTIDOS
-                </button>
-            </div>	
-        </div>
+				<div class="container">
+					<div class="row d-none mt-5" id="titulares" data-state="hide"></div>
+				</div>
 
+				<div class="container">
+					<div class="row d-none mt-5" id="partidos" data-state="hide"></div>
+				</div>
 
-    <div  class="container text-center" data-state="view" id="convocadosDiv" >
-            <div class="row">
-                <article class="col-12 mt-5">
-                    <div class="card">
-                        <div class="card-body p-3">                 
-                            <ul class="columnas" id="convocados">
-                            </ul>
-                        </div>
-                </article>
-            
-            </div>
-    </div>  
-       
-       <div  class="container"  >
-            <div class="row d-none mt-5" id="titulares" data-state="hide">
-            </div>
-       </div>
+				<template id="template-convocados">
+					<li
+						class="list-group-item d-flex justify-content-between align-items-center border-1">
+						<div class="d-flex justify-content-between align-items-center">
+							<div
+								class="me-2 mt-2"
+								id="dorsalQuery"
+								style="width: 30px; height: 30px">
+								<span class="fw-bolder"></span>
+							</div>
+							<div class="ps-2">
+								<span class="lead text-center"></span>
+							</div>
+						</div>
+						<div>
+							<span class="badge rounded-pill"></span>
+						</div>
+					</li>
+				</template>
 
-       <div  class="container" >
-            <div class="row d-none mt-5" id="partidos" data-state="hide">
-            </div>
-        </div>
+				<template id="template-titulares">
+					<div class="col-6 col-lg-4 my-2">
+						<div class="card">
+							<div
+								class="card-body d-flex align-items-center justify-content-center">
+								<h6 class="text-center mt-1 mx-2">Titulares</h6>
+								<button class="btn btn-sm btn-danger border-0" id="rmvJugador">
+									<i class="fa-solid fa-xmark pe-none"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</main>
 
-        <template id="template-convocados">
-            <li class="list-group-item d-flex justify-content-between align-items-center border-1">
-                <span class="lead"></span>
-                <span class="badge rounded-pill" ></span>
-            </li>
-        </template>
-
-       <template id="template-titulares">
-            <div class="col-6 col-lg-4 my-2">
-                <div class="card">
-                    <div class="card-body d-flex align-items-center justify-content-center">
-                        <h6 class="text-center mt-1 mx-2">Titulares</h6>
-                        <button class="btn btn-sm btn-danger border-0" id="rmvJugador"><i class="fa-solid fa-xmark pe-none"></i></button>
-            
-                        <!-- DISEÑAR PRESENTACION DE TITULARES
-                        <p></p>
-                        <span class="badge badge-primary">MD</span>
-                        <img src="" alt=""> -->
-                    </div>
-                </div>
-            </div>
-       </template>
-       
-    </div>            
-    </main> 
-
-    <footer>
-       <div class="container-fluid">
-        <div class="row mt-4">
-            <div class=" col-2 col-lg-1">
-                <img src="img/logo-poli.png" alt="Logo politenico" class="img-fluid">
-            </div>
-            <div class="col-md-4 col-lg-10">
-                <p class="small text-white text-center align-text-bottom mt-3">Desarollado por Grupo 5 // Copyright © 2022 Todos los derechos reservados
-                </p> 
-            </div>
-        </div>
-       </div>
-    </footer>
-</body>
+		<footer>
+			<div class="container-fluid">
+				<div class="row mt-4">
+					<div class="col-2 col-lg-1">
+						<img
+							src="img/logo-poli.png"
+							alt="Logo politenico"
+							class="img-fluid" />
+					</div>
+					<div class="col-md-4 col-lg-10">
+						<p class="small text-white text-center align-text-bottom mt-3">
+							Desarollado por Grupo 5 // Copyright © 2022 Todos los derechos
+							reservados
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
 </html>

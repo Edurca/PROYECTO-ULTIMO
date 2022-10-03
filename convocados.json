@@ -1,6 +1,15 @@
 {
 	"convocados": [
 		{
+			"nombre": "Franco",
+			"apellido": "Armani",
+			"edad": 35,
+			"posicion": ["ARQ"],
+			"color": "bg-secondary",
+			"dorsal": 1,
+			"titular": false
+		},
+		{
 			"nombre": "Emiliano",
             "apellido": "Martínez",
 			"edad": 30,
@@ -8,15 +17,6 @@
 			"color": "bg-secondary",
 			"dorsal": 23,
 			"titular": true
-		},
-		{
-			"nombre": "Franco",
-            "apellido": "Armani",
-			"edad": 35,
-			"posicion": ["ARQ"],
-			"color": "bg-secondary",
-			"dorsal": 1,
-			"titular": false
 		},
 		{
 			"nombre": "Geronimo",
@@ -216,5 +216,6 @@
 			"dorsal": 15,
 			"titular": false
 		}
-	]
+	],
+	"dt": "Lionel Scaloni"
 }

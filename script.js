@@ -26,6 +26,7 @@ const fetchData = async () => {
 //funcion para imprimir datos de convocados
 const pintarConvocados = data => {
 	data.convocados.map(jugador => {
+		templateConvocados.querySelector('.fw-bolder').textContent = `#${jugador.dorsal}`
 		templateConvocados.querySelector('.lead').textContent = `${jugador.nombre} ${jugador.apellido}`;
 		templateConvocados.querySelector('.badge').textContent = `${jugador.posicion[0]}`
 		templateConvocados.querySelector('.badge').className = `badge ${jugador.color} rounded-pill`
