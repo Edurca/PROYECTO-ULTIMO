@@ -1,36 +1,101 @@
 body {
-    background-image: url("./img/fondoprincipal.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
+	background-image: url('./img/fondoprincipal.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
 }
 
 #tituloHeader {
-    background-color: #00AFEF;
-} 
+	background-color: #00afef;
+}
 
 #fondoTitulo {
-    background: #1C5080;
+	background: #1c5080;
 }
 
 #btnIngreso {
-    color: rgb(213, 195, 195);
-}
-.columnas {
-    column-count: 3 !important;
-    padding-left: 0px;
-    margin: 0px
+	color: rgb(232, 219, 219); 
+    font-weight: 400;
 }
 
+#btnIngreso:hover {
+    color: #ffffff;
+}
+
+#convocadosDiv .card-body {
+	padding: 15px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)),
+		url('./img/pattern1.jpg');
+	size: contain;
+	background-position: center center;
+	border: none !important;
+}
+
+.columnas {
+	column-count: 3 !important;
+	padding-left: 0px;
+	margin: 0px;
+}
+
+.add {
+	position: relative;
+}
+
+
+
+.add h5::after {
+	position: absolute;
+	content: ' ✅';
+	left: 145%;
+}
+
+.add li {
+	position: relative;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+}
+
+
+
+.add li:after {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	height: 530%;
+	width: 160%;
+	transition: all 0.5s ease-in-out;
+}
+
+.add li:after {
+    /* #0B479E;  */
+	background: #00AFEF; 
+	transform: translate(-98%, -25%) rotate(45deg);
+}
+
+.add:hover li:after {
+	transform: translate(-8%, -30%) rotate(45deg);
+	z-index: 1;
+}
+
+.card-img-top {
+	position: relative;
+	top: -2px;
+	height: 8.2em !important;
+	object-fit: fill !important;
+}
 
 @media (max-width: 900px) {
-    .columnas {
-        column-count: 1 !important;
-        padding-left: 0px;
-        margin: 0px
-    }
-  }
+	.columnas {
+		column-count: 1 !important;
+		padding-left: 0px;
+		margin: 0px;
+	}
+}
 
 /* .botonRegistro {
     float:right;

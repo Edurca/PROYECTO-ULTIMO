@@ -2,6 +2,7 @@ const botonera = document.querySelector('#botonera');
 const convocados = document.getElementById('convocados');
 const convocadosDiv = document.getElementById('convocadosDiv');
 const titularesDiv = document.getElementById('titulares');
+
 const partidosDiv = document.getElementById('partidos');
 const templateConvocados = document.getElementById(
 	'template-convocados'
@@ -9,25 +10,35 @@ const templateConvocados = document.getElementById(
 const templateTitulares = document.getElementById('template-titulares').content;
 const fragment = document.createDocumentFragment();
 
-document.addEventListener('DOMContentLoaded', () => {
-	fetchData();
-});
+let listaConvocados;
+
+class Jugador {
+	constructor(nombre, apellido, edad, posicion, color, dorsal, titular) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+		this.posicion = posicion;
+		this.color = color;
+		this.dorsal = dorsal;
+		this.titular = titular;
+	}
+}
 
 //funcion para traer datos del JSON
 const fetchData = async () => {
 	try {
 		const res = await fetch('./convocados.json');
 		const data = await res.json(); //almaceno la respuesta en json
-		pintarConvocados(data);
-		pintarTitulares(data);
+		listaConvocados = data;
+		pintarConvocados(listaConvocados);
 	} catch (error) {
 		console.log(error);
 	}
 };
 
 //funcion para imprimir datos de convocados
-const pintarConvocados = data => {
-	data.convocados.map(jugador => {
+const pintarConvocados = lista => {
+	lista.convocados.map(jugador => {
 		templateConvocados.querySelector(
 			'.fw-bolder'
 		).textContent = `#${jugador.dorsal}`;
@@ -36,10 +47,12 @@ const pintarConvocados = data => {
 		).textContent = `${jugador.nombre} ${jugador.apellido}`;
 		templateConvocados.querySelector(
 			'.badge'
-		).textContent = `${jugador.posicion[0]}`;
+		).textContent = `${jugador.posicion}`;
 		templateConvocados.querySelector(
 			'.badge'
 		).className = `badge ${jugador.color} rounded-pill`;
+		templateConvocados.querySelector('.list-group-item').dataset.id =
+			jugador.dorsal;
 
 		const clone = templateConvocados.cloneNode(true);
 		fragment.appendChild(clone);
@@ -49,8 +62,20 @@ const pintarConvocados = data => {
 
 //funcion para pintar jugadores titulares
 const pintarTitulares = data => {
+	console.log(listaConvocados);
+	titularesDiv.innerHTML = '';
 	data.convocados.map(jugador => {
 		if (jugador.titular === true) {
+			templateTitulares.querySelector('img').src = jugador.img;
+			templateTitulares.querySelectorAll(
+				'.lead'
+			)[0].textContent = `${jugador.edad}`;
+			templateTitulares.querySelectorAll(
+				'.lead'
+			)[1].textContent = `${jugador.dorsal}`;
+			templateTitulares.querySelectorAll(
+				'.lead'
+			)[2].textContent = `${jugador.posicion}`;
 			templateTitulares.querySelector(
 				'h6'
 			).textContent = `${jugador.nombre} ${jugador.apellido}`;
@@ -63,6 +88,20 @@ const pintarTitulares = data => {
 	titularesDiv.appendChild(fragment);
 };
 
+convocadosDiv.addEventListener('click', e => {
+	agregarTitular(e);
+});
+
+const agregarTitular = e => {
+	// Validacion no más de 11 jugadores
+	if (e.target.dataset.id) {
+		const jugador = listaConvocados.convocados.find(
+			jugador => jugador.dorsal == e.target.dataset.id
+		);
+		jugador.titular = true;
+	}
+};
+
 // funcion que remueve jugador titular del equipo (en desarollo)
 titularesDiv.addEventListener('click', e => {
 	removerTitular(e);
@@ -70,8 +109,11 @@ titularesDiv.addEventListener('click', e => {
 
 const removerTitular = e => {
 	if (e.target.classList.contains('btn-danger')) {
-		//pregunta si el elemento al que clickeamos contiene la clase
-		console.log(`Remover ${e.target.dataset.id}`); // FALTA IMPLEMENTAR
+		const jugador = listaConvocados.convocados.find(
+			jugador => jugador.dorsal == e.target.dataset.id
+		);
+		jugador.titular = false;
+		e.target.parentNode.remove();
 	}
 	e.stopPropagation();
 };
@@ -83,6 +125,7 @@ botonera.addEventListener('click', e => {
 		titularesDiv.dataset.state = 'hide';
 		partidos.classList.add('d-none');
 		partidos.dataset.state = 'hide';
+
 		if (convocadosDiv.dataset.state === 'view') {
 			//comprueba si ya se abrió la pestaña, si es true agrega d-none y cambia el valor de data a hide
 			convocadosDiv.classList.add('d-none');
@@ -95,6 +138,7 @@ botonera.addEventListener('click', e => {
 	}
 
 	if (e.target.id === 'btnTitulares') {
+		pintarTitulares(listaConvocados);
 		convocadosDiv.classList.add('d-none');
 		convocadosDiv.dataset.state = 'hide';
 		partidos.classList.add('d-none');
@@ -127,40 +171,6 @@ botonera.addEventListener('click', e => {
 	e.stopPropagation();
 });
 
-/* const filtrarConvocados = data => {
-	const arq = [];
-	const def = [];
-	const vol = [];
-	const del = [];
-
-	data.convocados.map(jugador => {
-		jugador.posicion.filter(posicion => {
-			if (posicion === 'ARQ') {
-				arq.push(jugador);
-			}
-			if (posicion === 'DFC' || posicion === 'LD' || posicion === 'LI') {
-				def.push(jugador);
-			}
-			if (
-				posicion === 'MC' ||
-				posicion === 'MCO' ||
-				posicion === 'PIV' ||
-				posicion === 'VOL'
-			) {
-				vol.push(jugador);
-			}
-			if (
-				posicion === 'DC' ||
-				posicion === 'ED' ||
-				posicion === 'EI' ||
-				posicion === 'MP'
-			) {
-				del.push(jugador);
-			}
-		});
-
-	});
-	
-
-};
-} */
+document.addEventListener('DOMContentLoaded', () => {
+	fetchData();
+});

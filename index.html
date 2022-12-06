@@ -29,60 +29,59 @@
 							style="width: 80px; height: 100px" />
 					</div>
 					<div class="col-9">
-						<h1 class="text-white">LISTA DE CONVOCADOS MUNDIAL QATAR 2022</h1>
+						<h1 class="text-white">SELECCIÓN ARGENTINA MUNDIAL QATAR 2022</h1>
 					</div>
 				</div>
 
 				<div class="row">
 					<div
-						class="col-12 d-flex justify-content-end align-items-center"
+						class="py-2 d-flex"
 						id="fondoTitulo">
-						<div class="mx-2 py-1">
-							<a href="./ingreso.html"><button
-								class="btn btn-sm btn-outline-dark px-3 mx-1 border-2"
-								id="btnIngreso">
-								Ingresar
-							</button></a>
-							<a href="./registro.html"><button class="btn btn-sm btn-dark px-3 border-1">
-								Registro
-							</button></a>
+						<div class="container text-center d-flex justify-content-center" id="botonera">
+							<div class="col-1 mx-1"></div>
+							<div class="col-3 p-0 mx-2"><button
+								type="button"
+								class="btn btn-primary w-100"
+								id="btnConvocados">
+								LISTA DE CONVOCADOS
+							</button></div>
+							<div class="col-2 p-0 mx-2"><button
+								type="button"
+								class="btn btn-primary w-100"
+								id="btnTitulares">
+								TITULARES
+							</button></div>
+							<div class="col-2 p-0 mx-2">
+								<button
+								type="button"
+								class="btn btn-primary w-100"
+								id="btnPartidos">
+								PARTIDOS
+							</button>
+							</div>
 						</div>
+						<button class="btn btn-outline mx-1" id="btnIngreso">Ingresar</button> 
+						<span class="p-1 border-start"></span>
+						<button class="btn btn-outline" id="btnIngreso">Registrarse</button>
 					</div>
 				</div>
 			</div>
 		</header>
 
 		<main>
-			<div class="container-fluid min-vh-100">
+			<div class="container-fluid min-vh-100 position-relative">
 				<div class="row">
-					<div class="container text-center mt-1" id="botonera">
-						<button
-							type="button"
-							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
-							id="btnConvocados">
-							LISTA DE CONVOCADOS
-						</button>
-						<button
-							type="button"
-							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
-							id="btnTitulares">
-							TITULARES
-						</button>
-						<button
-							type="button"
-							class="col-12 col-lg-2 btn btn-primary my-1 mx-2"
-							id="btnPartidos">
-							PARTIDOS
-						</button>
-					</div>
+					
 				</div>
 
-				<div class="container text-center" data-state="view" id="convocadosDiv">
+				<div class="container-fluid text-center position-absolute top-50 start-50 translate-middle" data-state="view" id="convocadosDiv">
+					
 					<div class="row">
-						<article class="col-12 mt-5">
+						<article class="col-12 ">
 							<div class="card">
-								<div class="card-body p-3">
-									<ul class="columnas" id="convocados"></ul>
+								<div class="card-body p-3 d-flex flex-column justify-content-center">
+									<h1 class=" text-white">LISTA DE CONVOCADOS</h1>
+									<ul class="columnas mt-2" id="convocados"></ul>
 								</div>
 							</div>
 						</article>
@@ -98,34 +97,82 @@
 				</div>
 
 				<template id="template-convocados">
-					<li
-						class="list-group-item d-flex justify-content-between align-items-center border-1">
-						<div class="d-flex justify-content-between align-items-center">
-							<div
-								class="me-2 mt-2"
-								id="dorsalQuery"
-								style="width: 30px; height: 30px">
-								<span class="fw-bolder"></span>
+					<div class="add">
+						<li
+							class="list-group-item d-flex justify-content-between align-items-center border-1">
+							<div class="d-flex justify-content-between align-items-center">
+								<div
+									class="me-2 mt-2"
+									id="dorsalQuery"
+									style="width: 30px; height: 30px">
+									<span class="fw-bolder"></span>
+								</div>
+								<div class="ps-2">
+									<span class="lead text-center"></span>
+								</div>
 							</div>
-							<div class="ps-2">
-								<span class="lead text-center"></span>
+							<div>
+								<span class="badge rounded-pill"></span>
 							</div>
-						</div>
-						<div>
-							<span class="badge rounded-pill"></span>
-						</div>
-					</li>
+						</li>
+					</div>
 				</template>
 
 				<template id="template-titulares">
-					<div class="col-6 col-lg-4 my-2">
+					<div
+						class="col-6 col-lg-2 mt-0 mb-3 d-flex align-items-center flex-column">
+						<button
+							class="btn btn-sm btn-danger border-0 mb-1 position-relative"
+							id="rmvJugador"
+							style="width: 1.5em; height: 1.5em">
+							<i
+								class="fa-solid fa-xs fa-xmark p-none d-block pe-none position-absolute top-50 start-50 translate-middle"></i>
+						</button>
 						<div class="card">
+							<img class="card-img-top rounded mx-auto d-block" src="" alt="" />
 							<div
-								class="card-body d-flex align-items-center justify-content-center">
-								<h6 class="text-center mt-1 mx-2">Titulares</h6>
-								<button class="btn btn-sm btn-danger border-0" id="rmvJugador">
-									<i class="fa-solid fa-xmark pe-none"></i>
-								</button>
+								class="card-body d-flex flex-column align-items-center justify-content-center pt-1">
+								<h6 class="small text-center mt-1 mx-2 text-nowrap">
+									Titulares
+								</h6>
+								<div class="d-flex justify-content-between">
+									<div
+										class="d-flex justify-content-center flex-column m-1"
+										id="edadTitu">
+										<span
+											class="no-wrap text-center text-secondary"
+											style="font-size: 12px; font-weight: bold"
+											>EDAD
+										</span>
+										<span class="lead text-center" style="font-size: 14px"
+											>MD</span
+										>
+									</div>
+									<div
+										class="d-flex justify-content-center flex-column m-1"
+										id="dorsalTitu">
+										<span
+											class="no-wrap text-center text-secondary"
+											style="font-size: 12px; font-weight: bold">
+											DORSAL</span
+										>
+										<span class="lead text-center" style="font-size: 14px"
+											>11</span
+										>
+									</div>
+									<div
+										class="d-flex justify-content-center flex-column m-1"
+										id="posTitu">
+										<span
+											class="no-wrap text-center text-secondary"
+											style="font-size: 12px; font-weight: bold"
+											>POS</span
+										>
+										<span class="lead text-center" style="font-size: 14px"
+											>MD</span
+										>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
