@@ -9,8 +9,8 @@ const templateConvocados = document.getElementById(
 ).content;
 const templateTitulares = document.getElementById('template-titulares').content;
 const fragment = document.createDocumentFragment();
-
 let listaConvocados;
+let contadorTitulares = 0;
 
 class Jugador {
 	constructor(nombre, apellido, edad, posicion, color, dorsal, titular) {
@@ -95,18 +95,34 @@ convocadosDiv.addEventListener('click', e => {
 const agregarTitular = e => {
 	// Validacion no más de 11 jugadores
 	if (e.target.dataset.id) {
-		const jugador = listaConvocados.convocados.find(
-			jugador => jugador.dorsal == e.target.dataset.id
-		);
-		jugador.titular = true;
+		if (contadorTitulares < 11) {
+			const jugador = listaConvocados.convocados.find(
+				jugador => jugador.dorsal == e.target.dataset.id
+			);
+			jugador.titular = true;
+			contadorTitulares++;
+			Swal.fire({
+				position: 'top-center',
+				icon: 'success',
+				title: `¡Seleccionaste a ${jugador.nombre} ${jugador.apellido} como titular!`,
+				showConfirmButton: false,
+				timer: 1500
+			  })
+		} else {
+			Swal.fire({
+				icon: 'error',
+				title: '¡El equipo está completo!',
+				text: 'Elimina alguno de tus jugadores titulares para seguir realizando cambios en el equipo.',
+			  })
+		}
 	}
 };
 
-// funcion que remueve jugador titular del equipo (en desarollo)
 titularesDiv.addEventListener('click', e => {
 	removerTitular(e);
 });
 
+// funcion que remueve jugador titular del equipo
 const removerTitular = e => {
 	if (e.target.classList.contains('btn-danger')) {
 		const jugador = listaConvocados.convocados.find(
@@ -114,6 +130,7 @@ const removerTitular = e => {
 		);
 		jugador.titular = false;
 		e.target.parentNode.remove();
+		contadorTitulares--;
 	}
 	e.stopPropagation();
 };

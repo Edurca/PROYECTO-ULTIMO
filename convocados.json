@@ -19,7 +19,6 @@
 			"dorsal": 1,
 			"titular": false,
 			"img": "./img/armani.png"
-
 		},
 		{
 			"nombre": "Geronimo",
@@ -178,7 +177,7 @@
 		},
 		{
 			"nombre": "Alexis",
-            "apellido": "Mac Callister",
+            "apellido": "Mac Allister",
 			"edad": 23,
 			"posicion": "MCO",
 			"color": "bg-success",
