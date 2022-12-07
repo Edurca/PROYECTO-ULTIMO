@@ -105,7 +105,7 @@ const agregarTitular = e => {
 				position: 'top-center',
 				icon: 'success',
 				title: `¡Seleccionaste a ${jugador.nombre} ${jugador.apellido} como titular!`,
-				showConfirmButton: false,
+				showConfirmButton: true,
 				timer: 1500
 			  })
 		} else {

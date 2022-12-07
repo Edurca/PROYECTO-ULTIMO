@@ -38,17 +38,6 @@ body {
 	margin: 0px;
 }
 
-.add {
-	position: relative;
-}
-
-
-
-.add h5::after {
-	position: absolute;
-	content: ' ✅';
-	left: 145%;
-}
 
 .add li {
 	position: relative;
@@ -59,27 +48,25 @@ body {
 	overflow: hidden;
 }
 
-
-
-.add li:after {
-	position: absolute;
-	content: '';
-	left: 0;
-	top: 0;
-	height: 530%;
-	width: 160%;
-	transition: all 0.5s ease-in-out;
+.button::before {
+    content: "SELECCIONAR JUGADOR  \00a0 \00a0 \00a0✅";
+    padding-top: 2%;
+    padding-right: 5%;;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #1457B4;
+    width: 100%;
+    height: 99%;
+    transform: translateX(-100%);
+    transition: all 0.7s ease;
 }
 
-.add li:after {
-    /* #0B479E;  */
-	background: #00AFEF; 
-	transform: translate(-98%, -25%) rotate(45deg);
-}
-
-.add:hover li:after {
-	transform: translate(-8%, -30%) rotate(45deg);
-	z-index: 1;
+.button:hover:before {
+    transform: translateX(13%);
 }
 
 .card-img-top {
