@@ -205,7 +205,7 @@
 			"color": "bg-success",
 			"dorsal": 16,
 			"titular": false,
-			"img": "./img/"
+			"img": "./img/almada.png"
 		},
         {
 			"nombre": "Lionel",
@@ -235,7 +235,7 @@
 			"color": "bg-danger",
 			"dorsal": 15,
 			"titular": false,
-			"img": "./img/"
+			"img": "./img/correa.png"
 		},	
 		{
 			"nombre": "Ángel",
